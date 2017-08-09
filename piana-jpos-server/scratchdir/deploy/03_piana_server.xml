@@ -1,0 +1,19 @@
+<pianatwo name="asd-tx"
+         class="ir.piana.dev.jpos.app.module.PianaServer"
+         logger="main-logger">
+    <attr name="port" type="java.lang.Integer">6001</attr>
+    <attr name="minSessions" type="java.lang.Integer">10</attr>
+    <attr name="maxSessions" type="java.lang.Integer">250</attr>
+    <send-request>SENDER</send-request>
+    <channel name="terminal.channel"
+             class="org.jpos.iso.channel.ASCIIChannel"
+             packager="org.jpos.iso.packager.ISO87BPackager">
+        <property name="timeout" value="300000" />
+    </channel>
+    <in>terminal-in</in>
+    <out>transaction-manager-queue</out>
+    <request-listener class="ir.piana.dev.jpos.app.module.PianaServer" logger="main-logger">
+        <property name="output-queue" value="terminal-in" />
+        <property name="input-queue" value="terminal-out" />
+    </request-listener>
+</pianatwo>

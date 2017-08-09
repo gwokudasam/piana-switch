@@ -1,0 +1,8 @@
+<qbean name="msg-sender"
+       class="com.shb.jpos.app.util.IsoMsgSender">
+       <property name="out-queue"
+                     value="terminal-in" />
+       <property name="space"
+                     value="tspace:default" />
+</qbean>
+

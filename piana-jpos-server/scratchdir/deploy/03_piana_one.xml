@@ -1,0 +1,9 @@
+<pianaone name="piana-one"
+        class="ir.piana.dev.jpos.app.module.PianaOneModule"
+        logger="main-logger">
+    <property name="prop-one"
+              value="5" />
+    <property name="prop-two"
+              value="10" />
+    <prop-three>4</prop-three>
+</pianaone>

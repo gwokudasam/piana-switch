@@ -1,0 +1,22 @@
+<txnmgr name="transaction-manager"
+        class="org.jpos.transaction.TransactionManager"
+        logger="main-logger">
+    <property name="sessions"
+              value="5" />
+
+    <property name="queue"
+              value="transaction-manager-queue" />
+    <property name="space"
+              value="tspace:default" />
+    <property name="debug"
+              value="false" />
+
+    <participant class="ir.piana.dev.jpos.app.participant.selector.PianaGroupSelector" />
+
+    <group name="balance-inquiry-request">
+        <participant class="ir.piana.dev.jpos.app.participant.BalanceRequest" />
+    </group>
+    <group name="balance-inquiry-response">
+        <participant class="ir.piana.dev.jpos.app.participant.BalanceResponse" />
+    </group>
+</txnmgr>
